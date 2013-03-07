@@ -7,6 +7,7 @@ gem 'rails'
 
 gem 'sqlite3'
 gem 'haml'
+gem 'bootstrap-sass'
 
 group :production do
   gem 'pg'
