@@ -1,4 +1,16 @@
 BlogProject::Application.routes.draw do
+  get "articles/new"
+
+  get "articles/index"
+
+  get "articles/show"
+
+  get "articles/edit"
+
+  get "articles/create"
+
+  get "articles/destroy"
+
   get "blogpost/show"
 
   get "blogpost/index"
