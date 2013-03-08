@@ -1,0 +1,11 @@
+= render 'shared/error', object: f.object
+
+= f.label :title, "Article title"
+= f.text_field :title
+
+= f.label :body, "Article"
+= f.text_area :body
+
+= f.submit "Submit", class: "btn btn-large btn-primary"
+= submit_tag "Cancel", { type: 'button', class: "btn btn-large btn-danger", onclick: "location.href = '#{root_path}'" }
+

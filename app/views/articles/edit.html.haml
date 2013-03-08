@@ -1,2 +1,6 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+%h1 Edit article
+
+.row
+  .span6.offset3
+    = form_for @article do |f|
+      = render 'shared/form', f: f

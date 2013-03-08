@@ -8,6 +8,7 @@ gem 'rails'
 gem 'sqlite3'
 gem 'haml'
 gem 'bootstrap-sass'
+gem 'launchy'
 
 group :production do
   gem 'pg'
@@ -22,7 +23,7 @@ end
 group :test do
   gem 'capybara', '1.1.2'
   gem 'factory_girl_rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'guard-rspec'
   gem 'guard-cucumber'

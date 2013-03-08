@@ -1,2 +1,9 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+%h1 New article
+
+.row
+  .span6.offset3
+    = form_for @article do |f|
+
+      = render 'shared/form', f: f
+-#<h1>Articles#new</h1>
+-#<p>Find me in app/views/articles/new.html.erb</p>

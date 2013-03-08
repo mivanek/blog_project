@@ -1,12 +1,22 @@
 !!! 5
 %html
   %head
-    %title My Blog Project
+    %meta{ charset: "utf-8" }
+    %title= content_for?(:title) ? yield(:title) : "My Blog Project"
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  = yield
+  %body
+    #main{ role: "main" }
+      .container
+        - flash.each do |key, value|
+          = content_tag(:div, value, class: "alert alert-#{key}")
+        .content
+          .row
+            .span12
+              .center
+                = yield
 
 -#<!DOCTYPE html>
 -#<html>

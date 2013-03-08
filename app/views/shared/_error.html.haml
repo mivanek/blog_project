@@ -1,0 +1,11 @@
+- if object.errors.any?
+  .alert.alert-error
+    There were
+    = pluralize(object.errors.count, "error")
+    on the form
+    %a{ href: "#", class: "close", "data-dismiss" => "alert" }
+      &times
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li
+          = msg
