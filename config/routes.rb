@@ -1,27 +1,8 @@
 BlogProject::Application.routes.draw do
-  get "articles/new"
 
-  get "articles/index"
+  resources :articles
 
-  get "articles/show"
-
-  get "articles/edit"
-
-  get "articles/create"
-
-  get "articles/destroy"
-
-  get "blogpost/show"
-
-  get "blogpost/index"
-
-  get "blogpost/new"
-
-  get "blogpost/edit"
-
-  get "blogpost/create"
-
-  get "blogpost/delete"
+  root to: 'articles/index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
