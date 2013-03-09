@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'launchy'
+gem 'bcrypt-ruby'
 
 group :production do
   gem 'pg'
