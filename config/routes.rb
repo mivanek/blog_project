@@ -1,5 +1,13 @@
 BlogProject::Application.routes.draw do
 
+  get "users/new"
+
+  get "users/edit"
+
+  get "users/update"
+
+  get "users/destroy"
+
   resources :articles
 
   root to: 'articles#index'
