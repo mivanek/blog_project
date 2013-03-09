@@ -16,12 +16,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
-    if @article.save
+    article = Article.new(params[:article])
+    if article.save
       redirect_to root_path
       flash[:success] = "Blog post successfully created"
     else
-      render 'new'
+      redirect_to 'new' and return
     end
   end
 
@@ -37,6 +37,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
-
+    article = Article.find(params[:id])
+    if article.update_attributes(params[:article])
+      flash[:success] = "Blog post successfully updated"
+      redirect_to article_path(article)
+    else
+      flash[:error] = "Updating article failed!"
+      redirect_to article_path(article) and return
+    end
   end
 end

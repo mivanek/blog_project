@@ -27,8 +27,6 @@ group :test do
   gem 'database_cleaner'
   gem 'guard-rspec'
   gem 'guard-cucumber'
-  gem 'guard-spork'
-  gem 'spork'
 end
 group :development, :test do
   gem 'pry'
