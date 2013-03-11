@@ -3,6 +3,6 @@
 %p= @article.body
 
 
-= link_to "Destroy current article", article_path(@article), { method: :delete, confirm: "Are you sure?" }
+= link_to "Delete current article", article_path(@article), { method: :delete, confirm: "Are you sure?" }
 
 = link_to "Edit current article", edit_article_path(@article), class: 'pull-right'

@@ -8,11 +8,12 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    find_article(params[:id])
+    #@article = Article.find(params[:id])
   end
 
   def edit
-    @article = Article.find(params[:id])
+    find_article(params[:id])
   end
 
   def create
@@ -26,8 +27,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    article = Article.find(params[:id])
-    if article.destroy
+    find_article(params[:id])
+    if @article.destroy
       redirect_to root_path
       flash[:success] = "Blog post successfully deleted"
     else
@@ -37,13 +38,24 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article = Article.find(params[:id])
-    if article.update_attributes(params[:article])
+    find_article(params[:id])
+    if @article.update_attributes(params[:article])
       flash[:success] = "Blog post successfully updated"
-      redirect_to article_path(article)
+      redirect_to article_path(@article)
     else
       flash[:error] = "Updating article failed!"
-      redirect_to article_path(article) and return
+      redirect_to article_path(@article) and return
     end
   end
+
+  private
+
+    def find_article(id)
+      begin
+        @article = Article.find(id)
+      rescue ActiveRecord::RecordNotFound
+        flash[:error] = "Invalid article id"
+        redirect_to root_path
+      end
+    end
 end

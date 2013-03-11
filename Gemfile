@@ -8,7 +8,6 @@ gem 'rails'
 gem 'sqlite3'
 gem 'haml'
 gem 'bootstrap-sass'
-gem 'launchy'
 gem 'bcrypt-ruby'
 
 group :production do
@@ -23,17 +22,18 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'launchy'
   gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'guard-rspec'
   gem 'guard-cucumber'
+  gem 'simplecov', require: false
 end
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'simplecov'
 end
 
 # Gems used only for assets and not required
